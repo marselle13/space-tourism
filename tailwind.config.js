@@ -11,6 +11,9 @@ module.exports = {
         "space-black": "#0B0D17",
         "space-gray": "#D0D6F9",
       },
+      backgroundImage: {
+        homeMobile: "url('../assets/home/background-home-mobile.jpg')",
+      },
     },
   },
   plugins: [],

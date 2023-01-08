@@ -5,15 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../dist/output.css" />
-    <title>Space Tourism</title>
+    <title></title>
   </head>
   <body>
-    <h1 class="text-[150px]">
-      00 Home 01 Destination 02 Crew 03 Technology So, you want to travel to
-      Space Let’s face it; if you want to go to space, you might as well
-      genuinely go to outer space and not hover kind of on the edge of it. Well
-      sit back, and relax because we’ll give you a truly out of this world
-      experience! Explore
-    </h1>
+    <div
+      class="bg-homeMobile bg-no-repeat bg-cover min-h-screen mix-blend-screen p-6"
+    >
+      <header>
+        <div class="flex justify-between items-center">
+          <img src="../assets/shared/logo.svg" alt="logo" class="w-10 h-10" />
+          <button id="burger">
+            <img
+              src="../assets/shared/icon-hamburger.svg"
+              alt="burger"
+              class=""
+            />
+          </button>
+        </div>
+        <div
+          id="defaultModal"
+          tabindex="-1"
+          aria-hidden="true"
+          class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full h-full hidden"
+        >
+          <div class="relative pl-[120px] h-full">
+            <div
+              class="relative bg-transparent backdrop-blur-2xl h-full pt-[34px] pr-[26px] pl-[32px]"
+            >
+              <div class="flex flex-col justify-between items-end">
+                <button id="close">
+                  <img
+                    src="../assets/shared/icon-close.svg"
+                    alt=""
+                    class="items-center"
+                  />
+                </button>
+              </div>
+              <ul class="mt-[65px] space-y-[32px]">
+                <li>
+                  <a href="" class="text-white tracking-[2.7px]"
+                    ><span class="font-bold">00</span> HOME</a
+                  >
+                </li>
+                <li>
+                  <a href="" class="text-white tracking-[2.7px]"
+                    ><span class="font-bold">01</span> DESTINATION</a
+                  >
+                </li>
+                <li>
+                  <a href="" class="text-white tracking-[2.7px]"
+                    ><span class="font-bold">02</span> CREW</a
+                  >
+                </li>
+                <li>
+                  <a href="" class="text-white tracking-[2.7px]"
+                    ><span class="font-bold">03</span> TECHNOLOGY</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="text-center text-white mt-[58px] mb-[80px]">
+          <h5
+            class="uppercase text-[16px] tracking-[2.7px] leading-[19px] text-space-gray"
+          >
+            SO, YOU WANT TO TRAVEL TO
+          </h5>
+          <h1
+            class="uppercase text-[5rem] leading-[100px] text-white my-[1rem]"
+          >
+            Space
+          </h1>
+          <p class="text-space-gray text-[15px] leading-[25px]">
+            Let’s face it; if you want to go to space, you might as well
+            genuinely go to outer space and not hover kind of on the edge of it.
+            Well sit back, and relax because we’ll give you a truly out of this
+            world experience!
+          </p>
+        </div>
+        <div class="text-center">
+          <button
+            class="uppercase bg-white font-bellefair text-[20px] leading-[23px] w-[150px] h-[150px] rounded-full text-space-black"
+          >
+            explore
+          </button>
+        </div>
+      </main>
+    </div>
+    <script src="./js/script.js"></script>
   </body>
 </html>

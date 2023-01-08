@@ -12,6 +12,9 @@
   src: url(../fonts/Bellefair-Regular.ttf) format("truetype");
 }
 
+html {
+  font-family: "barlow", sans-serif;
+}
 h1,
 h2,
 h3,
