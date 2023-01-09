@@ -15,6 +15,12 @@ module.exports = {
         homeMobile: "url('../assets/home/background-home-mobile.jpg')",
         homeTablet: "url('../assets/home/background-home-tablet.jpg')",
         homeDesktop: "url('../assets/home/background-home-desktop.jpg')",
+        destinationMobile:
+          "url('../assets/destination/background-destination-mobile.jpg')",
+        destinationTablet:
+          "url('../assets/destination/background-destination-tablet.jpg')",
+        destinationDesktop:
+          "url('../assets/destination/background-destination-desktop.jpg')",
       },
     },
   },
