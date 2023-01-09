@@ -9,31 +9,38 @@
   </head>
   <body>
     <div
-      class="bg-homeMobile bg-no-repeat bg-cover min-h-screen mix-blend-screen p-6"
+      class="bg-homeMobile bg-no-repeat bg-cover min-h-screen mix-blend-screen p-6 md:p-0 md:bg-homeTablet lg:bg-homeDesktop"
     >
       <header>
-        <div class="flex justify-between items-center">
-          <img src="../assets/shared/logo.svg" alt="logo" class="w-10 h-10" />
-          <button id="burger">
+        <div
+          class="flex justify-between items-center md:pl-10 lg:pt-10 lg:pl-[55px] lg:justify-start"
+        >
+          <img
+            src="../assets/shared/logo.svg"
+            alt="logo"
+            class="w-10 h-10 md:w-12 md:h-12"
+          />
+          <div
+            class="hidden lg:relative lg:z-10 lg:block lg:h-px lg:bg-white/25 lg:w-[calc(100%-860px)] lg:ml-16 lg:-mr-8 z-10"
+          ></div>
+          <button id="burger" class="md:hidden flex">
             <img
               src="../assets/shared/icon-hamburger.svg"
               alt="burger"
               class=""
             />
           </button>
-        </div>
-        <div
-          id="defaultModal"
-          tabindex="-1"
-          aria-hidden="true"
-          class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full h-full hidden"
-        >
-          <div class="relative pl-[120px] h-full">
+          <div
+            id="defaultModal"
+            tabindex="-1"
+            aria-hidden="true"
+            class="overflow-y-hidden overflow-x-hidden absolute top-0 right-0 left-0 z-50 w-full h-full hidden md:block md:relative md:h-[96px] md:w-[450px] pl-[120px] md:pl-0 md:z-0 lg:w-[830px]"
+          >
             <div
-              class="relative bg-transparent backdrop-blur-2xl h-full pt-[34px] pr-[26px] pl-[32px]"
+              class="relative bg-white/[.04] backdrop-blur-2xl saturate-120 h-full pt-[34px] pr-[26px] pl-[32px] md:pt-0 md:pl-0 md:pr-0"
             >
               <div class="flex flex-col justify-between items-end">
-                <button id="close">
+                <button id="close" class="md:hidden flex">
                   <img
                     src="../assets/shared/icon-close.svg"
                     alt=""
@@ -41,45 +48,75 @@
                   />
                 </button>
               </div>
-              <ul class="mt-[65px] space-y-[32px]">
-                <li>
-                  <a href="" class="text-white tracking-[2.7px]"
-                    ><span class="font-bold">00</span> HOME</a
-                  >
-                </li>
-                <li>
-                  <a href="" class="text-white tracking-[2.7px]"
-                    ><span class="font-bold">01</span> DESTINATION</a
-                  >
-                </li>
-                <li>
-                  <a href="" class="text-white tracking-[2.7px]"
-                    ><span class="font-bold">02</span> CREW</a
-                  >
-                </li>
-                <li>
-                  <a href="" class="text-white tracking-[2.7px]"
-                    ><span class="font-bold">03</span> TECHNOLOGY</a
-                  >
-                </li>
-              </ul>
+              <nav
+                class="lg:pr-[165px] lg:w-full lg:pl-[122px] md:px-12 md:py-10"
+              >
+                <ul
+                  class="mt-[65px] space-y-[32px] block md:flex md:space-y-0 md:mt-0 md:gap-[37px] lg:justify-start lg:gap-[47px]"
+                >
+                  <li class="">
+                    <a
+                      href=""
+                      class="text-white tracking-[2.7px] md:text-[14px] md:tracking-[2.3px] md:leading-[17px] lg:flex lg:text-base md:border-b-4 md:border-white pb-7"
+                      ><span class="font-bold md:hidden lg:flex lg:mr-[10px]"
+                        >00
+                      </span>
+                      HOME</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="hover text-white tracking-[2.7px] md:text-[14px] md:tracking-[2.3px] md:leading-[17px] lg:flex lg:text-base hover:border-white"
+                      ><span class="font-bold md:hidden lg:flex lg:mr-[10px]"
+                        >01</span
+                      >
+                      DESTINATION</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="text-white tracking-[2.7px] md:text-[14px] md:tracking-[2.3px] md:leading-[17px] lg:flex lg:text-base"
+                      ><span class="font-bold md:hidden lg:flex lg:mr-[10px]"
+                        >02</span
+                      >
+                      CREW</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      class="text-white tracking-[2.7px] md:text-[14px] md:tracking-[2.3px] md:leading-[17px] lg:flex lg:text-base"
+                      ><span class="font-bold md:hidden lg:flex lg:mr-[10px]"
+                        >03</span
+                      >
+                      TECHNOLOGY</a
+                    >
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
       </header>
-      <main>
-        <div class="text-center text-white mt-[58px] mb-[80px]">
+      <main class="lg:flex lg:justify-around lg:items-end lg:mt-[250px]">
+        <div
+          class="text-center text-white mt-[58px] mb-[80px] md:mt-[110px] md:max-w-[450px] md:mx-auto md:mb-[150px] lg:mx-0 lg:mt-0 lg:mb-0"
+        >
           <h5
-            class="uppercase text-[16px] tracking-[2.7px] leading-[19px] text-space-gray"
+            class="uppercase text-[16px] tracking-[2.7px] leading-[19px] text-space-gray md:text-[20px] md:leading-[23px] md:tracking-[3.4px] lg:text-[28px] lg:text-leading-[34px] lg:tracking-[4.7px]"
           >
             SO, YOU WANT TO TRAVEL TO
           </h5>
           <h1
-            class="uppercase text-[5rem] leading-[100px] text-white my-[1rem]"
+            class="uppercase text-[5rem] leading-[100px] text-white my-[1rem] md:my-[24px] md:text-[150px] md:leading-[150px] lg:leading-[173px]"
           >
             Space
           </h1>
-          <p class="text-space-gray text-[15px] leading-[25px]">
+          <p
+            class="text-space-gray text-[15px] leading-[25px] md:text-[16px] md:leading-[28px] lg:text-[18px] lg:leading-[32px]"
+          >
             Let’s face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
             Well sit back, and relax because we’ll give you a truly out of this
@@ -88,7 +125,7 @@
         </div>
         <div class="text-center">
           <button
-            class="uppercase bg-white font-bellefair text-[20px] leading-[23px] w-[150px] h-[150px] rounded-full text-space-black"
+            class="uppercase bg-white font-bellefair text-[20px] leading-[23px] w-[150px] h-[150px] rounded-full text-space-black md:w-[242px] md:h-[242px] md:text-[32px] md:leading-[37px] tracking-[2px] lg:hover:ring-[88px] lg:ease-in-out lg:hover:ring-white/10 lg:duration-500"
           >
             explore
           </button>

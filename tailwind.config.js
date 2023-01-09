@@ -13,6 +13,8 @@ module.exports = {
       },
       backgroundImage: {
         homeMobile: "url('../assets/home/background-home-mobile.jpg')",
+        homeTablet: "url('../assets/home/background-home-tablet.jpg')",
+        homeDesktop: "url('../assets/home/background-home-desktop.jpg')",
       },
     },
   },
