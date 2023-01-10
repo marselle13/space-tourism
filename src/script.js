@@ -35,77 +35,80 @@ close.addEventListener("click", function () {
   modal.classList.add("hidden");
   body.classList.remove("overflow-hidden");
 });
-
-start.addEventListener("click", function () {
-  location.href = "destination.html";
-});
+if (location.pathname.split("/").pop() === "home.html") {
+  start.addEventListener("click", function () {
+    location.href = "destination.html";
+  });
+}
 
 fetch("../data.json")
   .then((res) => res.json())
   .then((data) => {
     data.destinations.forEach((info) => {
       //planets
-
-      planets.forEach((planet) =>
-        planet.addEventListener("click", function () {
-          const planetValue = planet.innerHTML.trim();
-          planets.forEach((planet) => {
-            planet.classList.remove("border-b-[3px]", "border-white");
-          });
-          planet.classList.add("border-b-[3px]", "border-white");
-          if (info.name === planetValue) {
-            imageDestination.setAttribute("src", info.images.png);
-            planetName.textContent = info.name;
-            descriptionDestination.textContent = info.description;
-            distanceDestination.textContent = info.distance;
-            timeDestination.textContent = info.travel;
-          }
-        })
-      );
-
+      if (location.pathname.split("/").pop() === "destination.html") {
+        planets.forEach((planet) =>
+          planet.addEventListener("click", function () {
+            const planetValue = planet.innerHTML.trim();
+            planets.forEach((planet) => {
+              planet.classList.remove("border-b-[3px]", "border-white");
+            });
+            planet.classList.add("border-b-[3px]", "border-white");
+            if (info.name === planetValue) {
+              imageDestination.setAttribute("src", info.images.png);
+              planetName.textContent = info.name;
+              descriptionDestination.textContent = info.description;
+              distanceDestination.textContent = info.distance;
+              timeDestination.textContent = info.travel;
+            }
+          })
+        );
+      }
       //crews
-
-      crews.forEach((crew, index) => {
-        crew.addEventListener("click", function () {
-          crews.forEach((crew) => {
-            crew.classList.add("opacity-[0.17]");
+      if (location.pathname.split("/").pop() === "crew.html") {
+        crews.forEach((crew, index) => {
+          crew.addEventListener("click", function () {
+            crews.forEach((crew) => {
+              crew.classList.add("opacity-[0.17]");
+            });
+            crew.classList.remove("opacity-[0.17]");
+            if (index === +crew.value) {
+              imageCrew.setAttribute("src", data.crew[index].images.png);
+              positionCrew.textContent = data.crew[index].role;
+              nameCrew.textContent = data.crew[index].name;
+              infoCrew.textContent = data.crew[index].bio;
+            }
           });
-          crew.classList.remove("opacity-[0.17]");
-          if (index === +crew.value) {
-            imageCrew.setAttribute("src", data.crew[index].images.png);
-            positionCrew.textContent = data.crew[index].role;
-            nameCrew.textContent = data.crew[index].name;
-            infoCrew.textContent = data.crew[index].bio;
-          }
         });
-      });
-
+      }
       //technology
-      technologies.forEach((technology, index) => {
-        technology.addEventListener("click", function () {
-          technologies.forEach((technology) => {
-            technology.classList.add(
-              "bg-transparent",
-              "text-white",
-              "border-opacity-[0.25]"
-            );
-            technology.classList.remove("bg-white", "text-black");
+      if (location.pathname.split("/").pop() === "technology.html") {
+        technologies.forEach((technology, index) => {
+          technology.addEventListener("click", function () {
+            technologies.forEach((technology) => {
+              technology.classList.add(
+                "bg-transparent",
+                "text-white",
+                "border-opacity-[0.25]"
+              );
+              technology.classList.remove("bg-white", "text-black");
+            });
+            technology.classList.remove("bg-transparent", "text-white");
+            technology.classList.add("bg-white", "text-black");
+            if (index === +technology.value) {
+              imageTechnology.setAttribute(
+                "src",
+                data.technology[index].images.landscape
+              );
+              imageTechnologyPort.setAttribute(
+                "src",
+                data.technology[index].images.portrait
+              );
+              nameTechnology.textContent = data.technology[index].name;
+              infoTechnology.textContent = data.technology[index].description;
+            }
           });
-          technology.classList.remove("bg-transparent", "text-white");
-          technology.classList.add("bg-white", "text-black");
-          if (index === +technology.value) {
-            imageTechnology.setAttribute(
-              "src",
-              data.technology[index].images.landscape
-            );
-            imageTechnologyPort.setAttribute(
-              "src",
-              data.technology[index].images.portrait
-            );
-            nameTechnology.textContent = data.technology[index].name;
-            infoTechnology.textContent = data.technology[index].description;
-          }
         });
-      });
+      }
     });
   });
