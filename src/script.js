@@ -43,41 +43,40 @@ fetch("../data.json")
   .then((data) => {
     data.destinations.forEach((info) => {
       //planets
-      if (location.pathname.split("/").pop() === "destination.html") {
-        planets.forEach((planet) =>
-          planet.addEventListener("click", function () {
-            const planetValue = planet.innerHTML.trim();
-            planets.forEach((planet) => {
-              planet.classList.remove("border-b-[3px]", "border-white");
-            });
-            planet.classList.add("border-b-[3px]", "border-white");
-            if (info.name === planetValue) {
-              imageDestination.setAttribute("src", info.images.png);
-              planetName.textContent = info.name;
-              descriptionDestination.textContent = info.description;
-              distanceDestination.textContent = info.distance;
-              timeDestination.textContent = info.travel;
-            }
-          })
-        );
-      }
-      //crews
-      if (location.pathname.split("/").pop() === "crew.html") {
-        crews.forEach((crew, index) => {
-          crew.addEventListener("click", function () {
-            crews.forEach((crew) => {
-              crew.classList.add("opacity-[0.17]");
-            });
-            crew.classList.remove("opacity-[0.17]");
-            if (index === +crew.value) {
-              imageCrew.setAttribute("src", data.crew[index].images.png);
-              positionCrew.textContent = data.crew[index].role;
-              nameCrew.textContent = data.crew[index].name;
-              infoCrew.textContent = data.crew[index].bio;
-            }
+
+      planets.forEach((planet) =>
+        planet.addEventListener("click", function () {
+          const planetValue = planet.innerHTML.trim();
+          planets.forEach((planet) => {
+            planet.classList.remove("border-b-[3px]", "border-white");
           });
+          planet.classList.add("border-b-[3px]", "border-white");
+          if (info.name === planetValue) {
+            imageDestination.setAttribute("src", info.images.png);
+            planetName.textContent = info.name;
+            descriptionDestination.textContent = info.description;
+            distanceDestination.textContent = info.distance;
+            timeDestination.textContent = info.travel;
+          }
+        })
+      );
+
+      //crews
+
+      crews.forEach((crew, index) => {
+        crew.addEventListener("click", function () {
+          crews.forEach((crew) => {
+            crew.classList.add("opacity-[0.17]");
+          });
+          crew.classList.remove("opacity-[0.17]");
+          if (index === +crew.value) {
+            imageCrew.setAttribute("src", data.crew[index].images.png);
+            positionCrew.textContent = data.crew[index].role;
+            nameCrew.textContent = data.crew[index].name;
+            infoCrew.textContent = data.crew[index].bio;
+          }
         });
-      }
+      });
 
       //technology
       technologies.forEach((technology, index) => {
