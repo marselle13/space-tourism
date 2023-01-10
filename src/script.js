@@ -24,19 +24,21 @@ const imageTechnology = document.getElementById("image-technology");
 const nameTechnology = document.getElementById("name-technology");
 const infoTechnology = document.getElementById("info-technology");
 const imageTechnologyPort = document.getElementById("image-technology-port");
+const body = document.querySelector("body");
 
 burger.addEventListener("click", function () {
   modal.classList.remove("hidden");
+  body.classList.add("overflow-hidden");
 });
 
 close.addEventListener("click", function () {
   modal.classList.add("hidden");
+  body.classList.remove("overflow-hidden");
 });
-if (location.pathname.split("/").pop() === "home.html") {
-  start.addEventListener("click", function () {
-    location.href = "destination.html";
-  });
-}
+
+start.addEventListener("click", function () {
+  location.href = "destination.html";
+});
 
 fetch("../data.json")
   .then((res) => res.json())
