@@ -18,6 +18,12 @@ const imageCrew = document.getElementById("image-crew");
 const positionCrew = document.getElementById("position-crew");
 const nameCrew = document.getElementById("name-crew");
 const infoCrew = document.getElementById("info-crew");
+//technology
+const technologies = document.querySelectorAll(".technology");
+const imageTechnology = document.getElementById("image-technology");
+const nameTechnology = document.getElementById("name-technology");
+const infoTechnology = document.getElementById("info-technology");
+const imageTechnologyPort = document.getElementById("image-technology-port");
 
 burger.addEventListener("click", function () {
   modal.classList.remove("hidden");
@@ -36,34 +42,67 @@ fetch("../data.json")
   .then((res) => res.json())
   .then((data) => {
     data.destinations.forEach((info) => {
-      planets.forEach((planet) =>
-        planet.addEventListener("click", function () {
-          const planetValue = planet.innerHTML.trim();
-          planets.forEach((planet) => {
-            planet.classList.remove("border-b-[3px]", "border-white");
+      //planets
+      if (location.pathname.split("/").pop() === "destination.html") {
+        planets.forEach((planet) =>
+          planet.addEventListener("click", function () {
+            const planetValue = planet.innerHTML.trim();
+            planets.forEach((planet) => {
+              planet.classList.remove("border-b-[3px]", "border-white");
+            });
+            planet.classList.add("border-b-[3px]", "border-white");
+            if (info.name === planetValue) {
+              imageDestination.setAttribute("src", info.images.png);
+              planetName.textContent = info.name;
+              descriptionDestination.textContent = info.description;
+              distanceDestination.textContent = info.distance;
+              timeDestination.textContent = info.travel;
+            }
+          })
+        );
+      }
+      //crews
+      if (location.pathname.split("/").pop() === "crew.html") {
+        crews.forEach((crew, index) => {
+          crew.addEventListener("click", function () {
+            crews.forEach((crew) => {
+              crew.classList.add("opacity-[0.17]");
+            });
+            crew.classList.remove("opacity-[0.17]");
+            if (index === +crew.value) {
+              imageCrew.setAttribute("src", data.crew[index].images.png);
+              positionCrew.textContent = data.crew[index].role;
+              nameCrew.textContent = data.crew[index].name;
+              infoCrew.textContent = data.crew[index].bio;
+            }
           });
-          planet.classList.add("border-b-[3px]", "border-white");
-          if (info.name === planetValue) {
-            imageDestination.setAttribute("src", info.images.png);
-            planetName.textContent = info.name;
-            descriptionDestination.textContent = info.description;
-            distanceDestination.textContent = info.distance;
-            timeDestination.textContent = info.travel;
-          }
-        })
-      );
+        });
+      }
 
-      crews.forEach((crew, index) => {
-        crew.addEventListener("click", function () {
-          crews.forEach((crew) => {
-            crew.classList.add("opacity-[0.17]");
+      //technology
+      technologies.forEach((technology, index) => {
+        technology.addEventListener("click", function () {
+          technologies.forEach((technology) => {
+            technology.classList.add(
+              "bg-transparent",
+              "text-white",
+              "border-opacity-[0.25]"
+            );
+            technology.classList.remove("bg-white", "text-black");
           });
-          crew.classList.remove("opacity-[0.17]");
-          if (index === +crew.value) {
-            imageCrew.setAttribute("src", data.crew[index].images.png);
-            positionCrew.textContent = data.crew[index].role;
-            nameCrew.textContent = data.crew[index].name;
-            infoCrew.textContent = data.crew[index].bio;
+          technology.classList.remove("bg-transparent", "text-white");
+          technology.classList.add("bg-white", "text-black");
+          if (index === +technology.value) {
+            imageTechnology.setAttribute(
+              "src",
+              data.technology[index].images.landscape
+            );
+            imageTechnologyPort.setAttribute(
+              "src",
+              data.technology[index].images.portrait
+            );
+            nameTechnology.textContent = data.technology[index].name;
+            infoTechnology.textContent = data.technology[index].description;
           }
         });
       });
