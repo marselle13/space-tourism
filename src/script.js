@@ -32,7 +32,7 @@ burger.addEventListener("click", function () {
 close.addEventListener("click", function () {
   modal.classList.add("hidden");
 });
-if (location.pathname.split("/").pop() === "index.html") {
+if (location.pathname.split("/").pop() === "home.html") {
   start.addEventListener("click", function () {
     location.href = "destination.html";
   });
