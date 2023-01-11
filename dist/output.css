@@ -1452,6 +1452,18 @@ h4 {
     margin-top: 250px;
   }
 
+  .lg\:mr-\[30px\] {
+    margin-right: 30px;
+  }
+
+  .lg\:-ml-\[30px\] {
+    margin-left: -30px;
+  }
+
+  .lg\:-ml-\[10px\] {
+    margin-left: -10px;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -1488,6 +1500,10 @@ h4 {
     height: 80px;
   }
 
+  .lg\:h-\[274px\] {
+    height: 274px;
+  }
+
   .lg\:w-\[calc\(100\%-860px\)\] {
     width: calc(100% - 860px);
   }
@@ -1518,6 +1534,10 @@ h4 {
 
   .lg\:w-\[80px\] {
     width: 80px;
+  }
+
+  .lg\:w-\[274px\] {
+    width: 274px;
   }
 
   .lg\:max-w-\[1200px\] {
@@ -1671,6 +1691,14 @@ h4 {
 
   .lg\:pl-\[225px\] {
     padding-left: 225px;
+  }
+
+  .lg\:pr-\[10px\] {
+    padding-right: 10px;
+  }
+
+  .lg\:pr-\[30px\] {
+    padding-right: 30px;
   }
 
   .lg\:text-left {
